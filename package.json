@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd client && npm run build",
-    "installclient": "cd client && npm install",
-    "heroku-postbuild": "npm run installclient && npm run build",
-    "start": "nodemon server.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\""
+    "build": "cd client && npm install && npm run build && npm run start",
+    "heroku-postbuild": "npm run build",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -23,3 +20,4 @@
     "nodemon": "^2.0.12"
   }
 }
+
